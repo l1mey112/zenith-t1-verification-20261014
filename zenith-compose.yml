@@ -1,0 +1,24 @@
+services:
+  app:
+    image: nginx:1.27-alpine
+    configs:
+      - source: homepage
+        target: /usr/share/nginx/html/index.html
+  cache:
+    image: redis:7-alpine
+configs:
+  homepage:
+    content: |
+      <!doctype html><html><head><title>T1 verification</title></head><body><h1>Zenith T1 image update verification</h1><p>Disposable app for verifying reviewed image updates.</p></body></html>
+x-zenith:
+  catalog:
+    name: T1 verification
+    description: Disposable publishing verification app
+    authors: [l1mey112]
+    tags: [Developer tools]
+    source: https://github.com/l1mey112/zenith-t1-verification-20261014
+    license: MIT
+  expose:
+    - service: app
+      port: 80
+      web: true
