@@ -5,7 +5,7 @@ services:
       - source: homepage
         target: /usr/share/nginx/html/index.html
   cache:
-    image: redis:8-alpine
+    image: redis:6-alpine
 configs:
   homepage:
     content: |
