@@ -1,6 +1,6 @@
 services:
   app:
-    image: nginx:1.27-alpine
+    image: nginx:1.28-alpine
     configs:
       - source: homepage
         target: /usr/share/nginx/html/index.html
